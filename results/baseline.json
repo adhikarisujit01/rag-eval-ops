@@ -1,0 +1,11 @@
+{
+  "config": {
+    "retriever": "tfidf",
+    "chunking": "passage",
+    "rerank": false
+  },
+  "recall_at_3": 1.0,
+  "recall_at_1": 0.9,
+  "faithfulness_accuracy": 0.917,
+  "n_questions": 26
+}

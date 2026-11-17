@@ -1,0 +1,714 @@
+{
+  "summary": {
+    "config": {
+      "retriever": "tfidf",
+      "chunking": "passage",
+      "rerank": false
+    },
+    "n_questions": 26,
+    "n_non_ambiguous": 20,
+    "n_ambiguous": 6,
+    "recall_at_1": 0.9,
+    "recall_at_3": 1.0,
+    "recall_at_5": 1.0,
+    "mean_retrieval_ms_per_query": 0.103,
+    "error_counts": {
+      "correct": 18,
+      "retrieval_miss": 0,
+      "grounding_failure": 2,
+      "ambiguous": 6
+    },
+    "faithfulness_accuracy": 0.917,
+    "faithfulness_overlap_only_accuracy": 0.667,
+    "n_faithfulness_claims": 12
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "question": "What mainly causes ocean tides?",
+      "gold_doc": "tides",
+      "ambiguous": false,
+      "gold_keywords": [
+        "moon",
+        "gravitational"
+      ],
+      "top1": "tides",
+      "ranked_docs": [
+        "tides",
+        "spring-tides",
+        "neap-tides",
+        "photosynthesis",
+        "cellular-respiration"
+      ],
+      "answer": "Ocean tides are caused mainly by the gravitational pull of the Moon, with the Sun contributing a smaller effect.",
+      "error": "correct"
+    },
+    {
+      "id": "q02",
+      "question": "Where does photosynthesis mainly take place in a plant?",
+      "gold_doc": "photosynthesis",
+      "ambiguous": false,
+      "gold_keywords": [
+        "leaves",
+        "chloroplasts"
+      ],
+      "top1": "photosynthesis",
+      "ranked_docs": [
+        "photosynthesis",
+        "cellular-respiration",
+        "tides",
+        "adaptation",
+        "bees"
+      ],
+      "answer": "It takes place mainly in the leaves, inside organelles called chloroplasts, which contain the pigment chlorophyll.",
+      "error": "correct"
+    },
+    {
+      "id": "q03",
+      "question": "How do honeybees communicate where food is?",
+      "gold_doc": "bees",
+      "ambiguous": false,
+      "gold_keywords": [
+        "waggle",
+        "dance"
+      ],
+      "top1": "bees",
+      "ranked_docs": [
+        "bees",
+        "chemosynthesis",
+        "adaptation",
+        "cellular-respiration",
+        "eclipses"
+      ],
+      "answer": "Honeybees communicate the location of food with a waggle dance.",
+      "error": "correct"
+    },
+    {
+      "id": "q04",
+      "question": "Why do we have seasons?",
+      "gold_doc": "seasons",
+      "ambiguous": false,
+      "gold_keywords": [
+        "tilt",
+        "axis"
+      ],
+      "top1": "seasons",
+      "ranked_docs": [
+        "seasons",
+        "stratovolcano",
+        "shield-volcano",
+        "volcanoes",
+        "adaptation"
+      ],
+      "answer": "The seasons are caused by the tilt of the Earth's axis relative to its orbit around the Sun, not by changes in the Earth's distance from the Sun.",
+      "error": "correct"
+    },
+    {
+      "id": "q05",
+      "question": "What is a solar eclipse?",
+      "gold_doc": "eclipses",
+      "ambiguous": false,
+      "gold_keywords": [
+        "moon",
+        "blocks",
+        "sunlight"
+      ],
+      "top1": "eclipses",
+      "ranked_docs": [
+        "eclipses",
+        "solar-eclipse",
+        "lunar-eclipse",
+        "adaptation",
+        "bees"
+      ],
+      "answer": "A solar eclipse occurs when the Moon passes between the Earth and the Sun and blocks sunlight.",
+      "error": "correct"
+    },
+    {
+      "id": "q06",
+      "question": "What happens to water in the water cycle after evaporation?",
+      "gold_doc": "water-cycle",
+      "ambiguous": false,
+      "gold_keywords": [
+        "condenses",
+        "clouds",
+        "precipitation"
+      ],
+      "top1": "water-cycle",
+      "ranked_docs": [
+        "water-cycle",
+        "new-moon",
+        "photosynthesis",
+        "cellular-respiration",
+        "adaptation"
+      ],
+      "answer": "The water cycle describes how water evaporates from oceans, lakes and land, condenses into clouds, falls as precipitation, and collects again.",
+      "error": "correct"
+    },
+    {
+      "id": "q07",
+      "question": "Do like magnetic poles attract or repel?",
+      "gold_doc": "magnetism",
+      "ambiguous": false,
+      "gold_keywords": [
+        "repel"
+      ],
+      "top1": "magnetism",
+      "ranked_docs": [
+        "magnetism",
+        "adaptation",
+        "bees",
+        "cellular-respiration",
+        "chemosynthesis"
+      ],
+      "answer": "Like poles repel each other and unlike poles attract.",
+      "error": "correct"
+    },
+    {
+      "id": "q08",
+      "question": "What is natural selection?",
+      "gold_doc": "evolution",
+      "ambiguous": false,
+      "gold_keywords": [
+        "survive",
+        "reproduce",
+        "traits"
+      ],
+      "top1": "evolution",
+      "ranked_docs": [
+        "evolution",
+        "adaptation",
+        "bees",
+        "cellular-respiration",
+        "chemosynthesis"
+      ],
+      "answer": "Evolution by natural selection occurs when individuals with traits better suited to their environment are more likely to survive and reproduce, so those traits become more common in the population over generations.",
+      "error": "correct"
+    },
+    {
+      "id": "q09",
+      "question": "What causes the phases of the Moon?",
+      "gold_doc": "moon-phases",
+      "ambiguous": false,
+      "gold_keywords": [
+        "sunlight",
+        "angles"
+      ],
+      "top1": "moon-phases",
+      "ranked_docs": [
+        "moon-phases",
+        "new-moon",
+        "lunar-eclipse",
+        "solar-eclipse",
+        "eclipses"
+      ],
+      "answer": "The phases of the Moon are caused by the changing angles at which sunlight illuminates the Moon as seen from Earth.",
+      "error": "correct"
+    },
+    {
+      "id": "q10",
+      "question": "Which volcano type has gentle slopes and is built from runny lava?",
+      "gold_doc": "volcanoes",
+      "ambiguous": false,
+      "gold_keywords": [
+        "shield"
+      ],
+      "top1": "volcanoes",
+      "ranked_docs": [
+        "volcanoes",
+        "shield-volcano",
+        "stratovolcano",
+        "magnetism",
+        "adaptation"
+      ],
+      "answer": "Shield volcanoes, built from runny lava, have gentle slopes, while stratovolcanoes, built from alternating lava and ash, are steeper.",
+      "error": "correct"
+    },
+    {
+      "id": "q11",
+      "question": "Does the Moon produce its own light to create its phases?",
+      "gold_doc": "moon-phases",
+      "ambiguous": true,
+      "gold_keywords": [
+        "sunlight",
+        "illuminates"
+      ],
+      "top1": "moon-phases",
+      "ranked_docs": [
+        "moon-phases",
+        "chemosynthesis",
+        "volcanoes",
+        "new-moon",
+        "lunar-eclipse"
+      ],
+      "answer": "The phases of the Moon are caused by the changing angles at which sunlight illuminates the Moon as seen from Earth.",
+      "error": "ambiguous"
+    },
+    {
+      "id": "q12",
+      "question": "Are seasons caused by the Earth being closer to the Sun in summer?",
+      "gold_doc": "seasons",
+      "ambiguous": true,
+      "gold_keywords": [
+        "tilt",
+        "not",
+        "distance"
+      ],
+      "top1": "seasons",
+      "ranked_docs": [
+        "seasons",
+        "tides",
+        "moon-phases",
+        "solar-eclipse",
+        "lunar-eclipse"
+      ],
+      "answer": "The seasons are caused by the tilt of the Earth's axis relative to its orbit around the Sun, not by changes in the Earth's distance from the Sun.",
+      "error": "ambiguous"
+    },
+    {
+      "id": "q13",
+      "question": "What is a lunar eclipse?",
+      "gold_doc": "lunar-eclipse",
+      "ambiguous": false,
+      "gold_keywords": [
+        "earth",
+        "shadow",
+        "moon"
+      ],
+      "top1": "eclipses",
+      "ranked_docs": [
+        "eclipses",
+        "lunar-eclipse",
+        "solar-eclipse",
+        "adaptation",
+        "bees"
+      ],
+      "answer": "A lunar eclipse occurs when the Earth passes between the Sun and the Moon and casts its shadow on the Moon.",
+      "error": "correct"
+    },
+    {
+      "id": "q14",
+      "question": "What happens during a solar eclipse when the Moon passes directly between the Earth and the Sun?",
+      "gold_doc": "solar-eclipse",
+      "ambiguous": false,
+      "gold_keywords": [
+        "moon",
+        "blocking",
+        "sunlight"
+      ],
+      "top1": "solar-eclipse",
+      "ranked_docs": [
+        "solar-eclipse",
+        "eclipses",
+        "lunar-eclipse",
+        "new-moon",
+        "moon-phases"
+      ],
+      "answer": "A solar eclipse occurs when the Moon passes directly between the Earth and the Sun, blocking sunlight from reaching part of the Earth.",
+      "error": "correct"
+    },
+    {
+      "id": "q15",
+      "question": "When do spring tides occur?",
+      "gold_doc": "spring-tides",
+      "ambiguous": false,
+      "gold_keywords": [
+        "aligned",
+        "line"
+      ],
+      "top1": "spring-tides",
+      "ranked_docs": [
+        "spring-tides",
+        "tides",
+        "neap-tides",
+        "adaptation",
+        "bees"
+      ],
+      "answer": "Spring tides occur when the Moon, Earth and Sun are aligned in a straight line.",
+      "error": "correct"
+    },
+    {
+      "id": "q16",
+      "question": "When do neap tides occur?",
+      "gold_doc": "neap-tides",
+      "ambiguous": false,
+      "gold_keywords": [
+        "right",
+        "angles"
+      ],
+      "top1": "tides",
+      "ranked_docs": [
+        "tides",
+        "neap-tides",
+        "spring-tides",
+        "adaptation",
+        "bees"
+      ],
+      "answer": "When the Moon and Sun pull at right angles, neap tides occur, producing a smaller range.",
+      "error": "correct"
+    },
+    {
+      "id": "q17",
+      "question": "Where does cellular respiration mainly take place?",
+      "gold_doc": "cellular-respiration",
+      "ambiguous": false,
+      "gold_keywords": [
+        "mitochondria"
+      ],
+      "top1": "cellular-respiration",
+      "ranked_docs": [
+        "cellular-respiration",
+        "photosynthesis",
+        "tides",
+        "adaptation",
+        "bees"
+      ],
+      "answer": "Cellular respiration is the process by which cells release energy from glucose, using oxygen and producing carbon dioxide and water.",
+      "error": "grounding_failure"
+    },
+    {
+      "id": "q18",
+      "question": "Which volcano type has steep slopes and is built from alternating layers?",
+      "gold_doc": "stratovolcano",
+      "ambiguous": false,
+      "gold_keywords": [
+        "alternating",
+        "layers"
+      ],
+      "top1": "stratovolcano",
+      "ranked_docs": [
+        "stratovolcano",
+        "volcanoes",
+        "shield-volcano",
+        "magnetism",
+        "adaptation"
+      ],
+      "answer": "Stratovolcanoes are built from alternating layers of lava and ash.",
+      "error": "correct"
+    },
+    {
+      "id": "q19",
+      "question": "What do chemosynthesis bacteria use instead of sunlight?",
+      "gold_doc": "chemosynthesis",
+      "ambiguous": false,
+      "gold_keywords": [
+        "chemical",
+        "sulfur"
+      ],
+      "top1": "chemosynthesis",
+      "ranked_docs": [
+        "chemosynthesis",
+        "new-moon",
+        "solar-eclipse",
+        "eclipses",
+        "moon-phases"
+      ],
+      "answer": "Chemosynthesis is a process used by some bacteria to make food without sunlight.",
+      "error": "grounding_failure"
+    },
+    {
+      "id": "q20",
+      "question": "What is an adaptation?",
+      "gold_doc": "adaptation",
+      "ambiguous": false,
+      "gold_keywords": [
+        "trait",
+        "survive"
+      ],
+      "top1": "adaptation",
+      "ranked_docs": [
+        "adaptation",
+        "bees",
+        "cellular-respiration",
+        "chemosynthesis",
+        "eclipses"
+      ],
+      "answer": "An adaptation is a trait that helps an organism survive and reproduce in its environment, such as thick fur in cold climates.",
+      "error": "correct"
+    },
+    {
+      "id": "q21",
+      "question": "Why does a new moon appear dark?",
+      "gold_doc": "new-moon",
+      "ambiguous": false,
+      "gold_keywords": [
+        "dark",
+        "illuminated"
+      ],
+      "top1": "new-moon",
+      "ranked_docs": [
+        "new-moon",
+        "moon-phases",
+        "solar-eclipse",
+        "lunar-eclipse",
+        "eclipses"
+      ],
+      "answer": "A new moon occurs when the side of the Moon facing the Earth is not illuminated by sunlight, so the Moon appears dark from Earth.",
+      "error": "correct"
+    },
+    {
+      "id": "q22",
+      "question": "Do spring tides occur when the Moon and Sun pull at right angles?",
+      "gold_doc": "spring-tides",
+      "ambiguous": true,
+      "gold_keywords": [
+        "aligned",
+        "line"
+      ],
+      "top1": "tides",
+      "ranked_docs": [
+        "tides",
+        "neap-tides",
+        "spring-tides",
+        "moon-phases",
+        "lunar-eclipse"
+      ],
+      "answer": "When the Moon and Sun pull at right angles, neap tides occur, producing a smaller range.",
+      "error": "ambiguous"
+    },
+    {
+      "id": "q23",
+      "question": "Does a lunar eclipse happen when the Moon blocks the Sun?",
+      "gold_doc": "lunar-eclipse",
+      "ambiguous": true,
+      "gold_keywords": [
+        "earth",
+        "shadow"
+      ],
+      "top1": "eclipses",
+      "ranked_docs": [
+        "eclipses",
+        "lunar-eclipse",
+        "solar-eclipse",
+        "new-moon",
+        "moon-phases"
+      ],
+      "answer": "A solar eclipse occurs when the Moon passes between the Earth and the Sun and blocks sunlight.",
+      "error": "ambiguous"
+    },
+    {
+      "id": "q24",
+      "question": "Does the Earth blocking the Moon cause a solar eclipse?",
+      "gold_doc": "solar-eclipse",
+      "ambiguous": true,
+      "gold_keywords": [
+        "moon",
+        "blocking"
+      ],
+      "top1": "solar-eclipse",
+      "ranked_docs": [
+        "solar-eclipse",
+        "eclipses",
+        "lunar-eclipse",
+        "new-moon",
+        "moon-phases"
+      ],
+      "answer": "A solar eclipse occurs when the Moon passes directly between the Earth and the Sun, blocking sunlight from reaching part of the Earth.",
+      "error": "ambiguous"
+    },
+    {
+      "id": "q25",
+      "question": "Which process releases energy from glucose?",
+      "gold_doc": "cellular-respiration",
+      "ambiguous": false,
+      "gold_keywords": [
+        "glucose",
+        "energy"
+      ],
+      "top1": "cellular-respiration",
+      "ranked_docs": [
+        "cellular-respiration",
+        "chemosynthesis",
+        "photosynthesis",
+        "adaptation",
+        "bees"
+      ],
+      "answer": "Cellular respiration is the process by which cells release energy from glucose, using oxygen and producing carbon dioxide and water.",
+      "error": "correct"
+    },
+    {
+      "id": "q26",
+      "question": "Do neap tides occur when the Moon, Earth and Sun align?",
+      "gold_doc": "neap-tides",
+      "ambiguous": true,
+      "gold_keywords": [
+        "right",
+        "angles"
+      ],
+      "top1": "tides",
+      "ranked_docs": [
+        "tides",
+        "neap-tides",
+        "spring-tides",
+        "lunar-eclipse",
+        "new-moon"
+      ],
+      "answer": "When the Moon, Earth and Sun align, spring tides occur, producing a larger tidal range.",
+      "error": "ambiguous"
+    }
+  ],
+  "faithfulness_claims": [
+    {
+      "claim": "The Moon's gravity mainly causes ocean tides.",
+      "supported": true,
+      "doc_id": "tides",
+      "score": 0.571,
+      "overlap": 0.571,
+      "checks": [],
+      "predicted_supported": true,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": true,
+      "judge_verdict": "supported"
+    },
+    {
+      "claim": "Spring tides occur when Moon, Earth and Sun align.",
+      "supported": true,
+      "doc_id": "tides",
+      "score": 1.0,
+      "overlap": 1.0,
+      "checks": [],
+      "predicted_supported": true,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": true,
+      "judge_verdict": "supported"
+    },
+    {
+      "claim": "Photosynthesis takes place mainly in chloroplasts.",
+      "supported": true,
+      "doc_id": "photosynthesis",
+      "score": 1.0,
+      "overlap": 1.0,
+      "checks": [],
+      "predicted_supported": true,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": true,
+      "judge_verdict": "supported"
+    },
+    {
+      "claim": "Honeybees use a waggle dance to show food location.",
+      "supported": true,
+      "doc_id": "bees",
+      "score": 0.714,
+      "overlap": 0.714,
+      "checks": [],
+      "predicted_supported": true,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": true,
+      "judge_verdict": "supported"
+    },
+    {
+      "claim": "Seasons are caused by the Earth moving closer to the Sun.",
+      "supported": false,
+      "doc_id": "seasons",
+      "score": 0.233,
+      "overlap": 0.667,
+      "checks": [
+        "negation"
+      ],
+      "predicted_supported": false,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": false,
+      "judge_verdict": "unsupported"
+    },
+    {
+      "claim": "A solar eclipse is caused by the Earth blocking the Moon.",
+      "supported": false,
+      "doc_id": "eclipses",
+      "score": 0.233,
+      "overlap": 0.667,
+      "checks": [
+        "role_order"
+      ],
+      "predicted_supported": false,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": false,
+      "judge_verdict": "unsupported"
+    },
+    {
+      "claim": "Like magnetic poles repel each other.",
+      "supported": true,
+      "doc_id": "magnetism",
+      "score": 0.833,
+      "overlap": 0.833,
+      "checks": [],
+      "predicted_supported": true,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": true,
+      "judge_verdict": "supported"
+    },
+    {
+      "claim": "The Moon produces its own light.",
+      "supported": false,
+      "doc_id": "moon-phases",
+      "score": 0.25,
+      "overlap": 0.25,
+      "checks": [],
+      "predicted_supported": false,
+      "correct": true,
+      "overlap_only_predicted_supported": false,
+      "overlap_only_correct": true,
+      "judge_verdict": "uncertain"
+    },
+    {
+      "claim": "Spring tides occur when the Moon, Earth and Sun align.",
+      "supported": true,
+      "doc_id": "spring-tides",
+      "score": 0.857,
+      "overlap": 0.857,
+      "checks": [],
+      "predicted_supported": true,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": true,
+      "judge_verdict": "supported"
+    },
+    {
+      "claim": "Spring tides occur when the Moon and Sun pull at right angles.",
+      "supported": false,
+      "doc_id": "spring-tides",
+      "score": 0.75,
+      "overlap": 0.75,
+      "checks": [],
+      "predicted_supported": true,
+      "correct": false,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": false,
+      "judge_verdict": "supported"
+    },
+    {
+      "claim": "Cellular respiration takes place mainly in chloroplasts.",
+      "supported": false,
+      "doc_id": "cellular-respiration",
+      "score": 0.292,
+      "overlap": 0.833,
+      "checks": [
+        "missing_entity"
+      ],
+      "predicted_supported": false,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": false,
+      "judge_verdict": "unsupported"
+    },
+    {
+      "claim": "A lunar eclipse is caused by the Earth casting its shadow on the Moon.",
+      "supported": true,
+      "doc_id": "lunar-eclipse",
+      "score": 0.857,
+      "overlap": 0.857,
+      "checks": [],
+      "predicted_supported": true,
+      "correct": true,
+      "overlap_only_predicted_supported": true,
+      "overlap_only_correct": true,
+      "judge_verdict": "supported"
+    }
+  ]
+}
